@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Geist+Mono:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --fontSize: 16px;
+    --secondaryFontSize: 16px;
+    --lineHeight: 22.5px;
+    --hairlineThickness: 1px;
+
+    --backgroundColor: #fff;
+    --hoverColor: #F4F4F5;
+    --darkBackgroundColor: #181818;
+    
+    --primaryTextColor: #181818;
+    --secondaryTextColor: #71717A;
+    --tertiaryTextColor: #D1D1D1;
+
+    --primaryFont: "Fragment Mono", serif, ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --secondaryFont: "Geist Mono", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    
+    --accentColor: #ddd;
+    --borderColor: #e5e5e5;
+
+    --currentWeekColor: #000;
+    --secondWeekColor: #171717;
+    --thirdWeekColor: #272727;
+    --fourthWeekColor: #3C3C3C;
+    --fifthWeekColor: #525252;
+    --sixthWeekColor: #626262;
+    --seventhWeekColor: #7C7C7C;
+    --eighthWeekColor: #8A8A8A;
+    --ninthWeekColor: #969696;
+    --tenthWeekColor: #A0A0A0;
+    --eleventhWeekColor: #ABABAB;
+    --allFollowingWeeksColor: #BABABA;
+  }
+
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+    color: var(--primaryTextColor);
+  
+    accent-color: var(--accentColor);
+    background-color: var(--backgroundColor);
+  
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  
+    margin: 0 auto;
+    padding: calc(var(--lineHeight) * 1) 0 calc(var(--lineHeight) * 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.header {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin: 0 auto;
+    padding: calc(var(--lineHeight) * 2) calc(var(--lineHeight) * 1);
+
+    height: fit-content;
+    width: 80%;
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 12px #0000001a;
+    border: 1px solid #eeeeee;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    transition: background-color 200ms ease;
+}
+
+th {
+    margin: 0;
+    padding: 8px;
+    color: var(--tertiaryTextColor);
+    font-weight: 400;
+    transition: background-color 0.2s ease;
+}
+td {
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+tr {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease;
+}
+.empty {
+    background-color: var(--backgroundColor);
+    border-radius: 0;
+}
+th:hover:not(.empty), th:focus-visible {
+    background: var(--hoverColor);
+    color: var(--primaryTextColor);
+}
+td:hover:not(.empty):not(.current),
+td:has(~ tr td:hover),
+table:has(td:hover) .month-name:not(.current) {
+    background: var(--hoverColor);
+    color: var(--primaryTextColor);
+}
+.month {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+}
+.month-days {
+    margin: 0;
+    padding: 0;
+}
+
+.month-end {
+    border-right: 1px solid currentColor;
+    border-radius: 0;
+}
+.current {
+    background: var(--darkBackgroundColor);
+    color: var(--tertiaryTextColor);
+}
+.current-week {
+    color: var(--currentWeekColor);
+}
+
+.week-1 {
+    color: var(--secondWeekColor);
+}
+
+.week-2 {
+    color: var(--thirdWeekColor);
+}
+
+.week-3 {
+    color: var(--fourthWeekColor);
+}
+
+.week-4 {
+    color: var(--fifthWeekColor);
+}
+
+.week-5 {
+    color: var(--sixthWeekColor);
+}
+
+.week-6 {
+    color: var(--seventhWeekColor);
+}
+
+.week-7 {
+    color: var(--eighthWeekColor);
+}
+
+.week-8 {
+    color: var(--ninthWeekColor);
+}
+
+.week-9 {
+    color: var(--tenthWeekColor);
+}
+
+.week-10 {
+    color: var(--eleventhWeekColor);
+}
+
+.all-following-weeks {
+    color: var(--allFollowingWeeksColor);
+}
+
+.start-date {
+    background: #ccc;
+    color: var(--primaryTextColor);
+    border-radius: 8px 0 0 0;
+}
+.end-date {
+    background: #ccc;
+    color: var(--primaryTextColor);
+    border-radius: 0 0 8px 0;
+}
+.selected {
+    background: #eee;
+    color: var(--primaryTextColor);
+}
+.in-range {
+    background: #ccc;
+    color: var(--primaryTextColor);
+}
+.btn {
+    padding: 8px 16px;
+    background-color: var(--backgroundColor);
+    color: var(--primaryTextColor);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 16px;
+    font-family: var(--primaryFont);
+    transition: transform 200ms ease 100ms;
+    box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.04);
+  }
+
+.btn:hover {
+    background-color: var(--hoverColor);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
