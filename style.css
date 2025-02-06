@@ -246,3 +246,15 @@ table:has(td:hover) .month-name:not(.current) {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+.footer {
+    border-top: 2px solid var(--borderColor);
+    width: 100%;
+    margin-top: 40px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
