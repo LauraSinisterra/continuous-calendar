@@ -3,283 +3,57 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>continuous calendar</title>
+    <title>date picker</title>
     <meta content="continuous calendar" property="og:site_name">
     <meta content="continuous calendar" name="twitter:title">
-
     <meta content="continuous calendar" name="description">
-    <meta content="website" property="og:type">
-
+    <meta content="continuous calendar" property="og:type">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container">
-        <div class="header">
-            <h1>calendar</h1>
-            <!-- <button id="startSelection" class="btn">Start selection</button> -->
+      <div class="header">
+        <h1>calendar</h1>
+        <div class="year-nav">
+          <button class="nav-btn" id="prevYear">
+            <svg height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.24996 12.0607L8.71963 11.5303L5.89641 8.7071C5.50588 8.31657 5.50588 7.68341 5.89641 7.29288L8.71963 4.46966L9.24996 3.93933L10.3106 4.99999L9.78029 5.53032L7.31062 7.99999L9.78029 10.4697L10.3106 11L9.24996 12.0607Z" fill="currentColor"></path>
+            </svg>
+          </button>
+          <span id="currentYear" class="year-label">2025</span>
+          <button class="nav-btn" id="nextYear">
+            <svg height="16" stroke-linejoin="round" viewBox="0 0 16 16" width="16">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.74999 3.93933L7.28032 4.46966L10.1035 7.29288C10.4941 7.68341 10.4941 8.31657 10.1035 8.7071L7.28032 11.5303L6.74999 12.0607L5.68933 11L6.21966 10.4697L8.68933 7.99999L6.21966 5.53032L5.68933 4.99999L6.74999 3.93933Z" fill="currentColor"></path>
+            </svg>
+          </button>
         </div>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr><th class="empty"></th><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                    <tr>
-                        <td class="month-name">DEC</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td class="month-end">31</td>
-                        <td class="over">01</td>
-                        <td class="over">02</td>
-                        <td class="over">03</td>
-                        <td class="over">04</td>
-                    </tr>
-                </table>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr>
-                        <td class="month-name">JAN</td>
-                        <td>05</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                        <td>09</td>
-                        <td>10</td>
-                        <td >11</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td class="month-end">31</td>
-                        <td>01</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr>
-                        <td class="month-name">FEB</td>
-                        <td>02</td>
-                        <td>03</td>
-                        <td>04</td>
-                        <td>05</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>09</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td class="month-end">28</td>
-                        <td>01</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr>
-                        <td class="month-name">MAR</td>
-                        <td>02</td>
-                        <td>03</td>
-                        <td>04</td>
-                        <td>05</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>09</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>23</td> 
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>30</td>
-                        <td class="month-end">31</td>
-                        <td>01</td>
-                        <td>02</td>
-                        <td>03</td>
-                        <td>04</td>
-                        <td>05</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr>
-                        <td class="month-name">APR</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                        <td>09</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td class="month-end">30</td>
-                        <td>01</td>
-                        <td>02</td>
-                        <td>03</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="month">
-            <div class="month-days">
-                <table>
-                    <tr>
-                        <td class="month-name">MAY</td>
-                        <td>04</td>
-                        <td>05</td>
-                        <td>06</td>
-                        <td>07</td>
-                        <td>08</td>
-                        <td>09</td>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>11</td>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>18</td>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                    </tr>
-                    <tr>
-                        <td class="empty"></td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td class="month-end">31</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-     <div class="footer">
-            <p>Made by <br>
-            <a href="https://laurasinisterra.com" target="_blank">Laura Sinisterra</p>
-       <p><a href="https://github.com/LauraSinisterra/continuous-calendar" target="_blank">Source</p>
+        <table class="table-header">
+            <thead>
+              <tr>
+                <th class="empty"></th>
+                <th class="empty"></th>
+                <th>Mo</th>
+                <th>Tu</th>
+                <th>We</th>
+                <th>Th</th>
+                <th>Fr</th>
+                <th>Sa</th>
+                <th>Su</th>
+              </tr>
+            </thead>
+          </table>
+      </div>
+
+      <!-- Month grid will be injected here by JavaScript -->
+
+      <div class="footer">
+        <p>Made by <br><a href="https://laurasinisterra.com" target="_blank">Laura Sinisterra</a></p>
+        <p><a href="https://github.com/LauraSinisterra/continuous-calendar" target="_blank">Source</a></p>
+      </div>
     </div>
-    </div>
+
     <script src="script.js"></script>
+    <script src="highlight.js"></script>
   </body>
 </html>
+
